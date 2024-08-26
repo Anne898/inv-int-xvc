@@ -95,16 +95,16 @@
                 class="u-countdown-counter u-countdown-counter-2 u-text-custom-color-50"
                 id="days">0</div>
               <div
-                class="u-countdown-label u-text-custom-color-90 u-countdown-label-2">DÍAS</div>
+                class="u-countdown-label u-text-custom-color-50 u-countdown-label-2">DÍAS</div>
             </div>
             <div
-              class="u-countdown-separator u-text-custom-color-90 u-countdown-separator-2">:</div>
+              class="u-countdown-separator u-text-custom-color-50 u-countdown-separator-2">:</div>
             <div class="u-countdown-hours u-countdown-item u-spacing-10">
               <div
                 class="u-text-custom-color-50 u-countdown-counter u-countdown-counter-3"
                 id="hours">0</div>
               <div
-                class="u-countdown-label u-text-custom-color-90 u-countdown-label-3">Horas</div>
+                class="u-countdown-label u-text-custom-color-50 u-countdown-label-3">Horas</div>
             </div>
             <div
               class="u-countdown-separator u-text-custom-color-50 u-countdown-separator-3">:</div>
@@ -113,7 +113,7 @@
                 class="u-text-custom-color-50 u-countdown-counter u-countdown-counter-4"
                 id="minutes">0</div>
               <div
-                class="u-countdown-label u-text-custom-color-90 u-countdown-label-4">Minutos</div>
+                class="u-countdown-label u-text-custom-color-50 u-countdown-label-4">Minutos</div>
             </div>
             <div
               class="u-countdown-separator u-text-custom-color-50 u-countdown-separator-4">:</div>
@@ -122,7 +122,7 @@
                 class="u-text-custom-color-50 u-countdown-counter u-countdown-counter-5"
                 id="seconds">0</div>
               <div
-                class=u-countdown-label u-text-custom-color-90 u-countdown-label-2">Segundos</div>
+                class=u-countdown-label u-text-custom-color-50 u-countdown-label-2">Segundos</div>
             </div>
           </div>
 
@@ -186,10 +186,10 @@
             const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-            document.getElementById('days').innerText = `${days} Días`;
-            document.getElementById('hours').innerText = `${hours} Horas`;
-            document.getElementById('minutes').innerText = `${minutes} Minutos`;
-            document.getElementById('seconds').innerText = `${seconds} Segundos`;
+            document.getElementById('days').innerText = `${days}`;
+            document.getElementById('hours').innerText = `${hours}`;
+            document.getElementById('minutes').innerText = `${minutes}`;
+            document.getElementById('seconds').innerText = `${seconds}`;
         }
 
         setInterval(updateCountdown, 1000);
