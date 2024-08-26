@@ -88,7 +88,7 @@
 
 
 	      
-	<div class="u-countdown u-countdown-1" data-timer-id="fbb1" data-type="to-date" data-target-date="Sat, 31 Aug 2024 21:00:00 GMT" data-for="everyone" data-direction="down" data-time-left="750m" data-target-number="100" data-start-time="Fri Feb 23 2024 00:33:00 GMT-0600 (Hora estándar central (México))" data-frequency="1s" data-after-count="none" data-redirect-url="https://">
+	<div class="u-countdown2 u-countdown-1" data-timer-id="fbb1" data-type="to-date" data-target-date="Sat, 31 Aug 2024 21:00:00 GMT" data-for="everyone" data-direction="down" data-time-left="750m" data-target-number="100" data-start-time="Fri Feb 23 2024 00:33:00 GMT-0600 (Hora estándar central (México))" data-frequency="1s" data-after-count="none" data-redirect-url="https://">
           <div class="u-countdown-wrapper u-spacing-20">
             <div class="u-countdown-item u-countdown-years u-hidden u-spacing-10">
               <div class="u-countdown-counter u-countdown-counter-1"><div class="u-countdown-number u-countdown-number-1">0</div><div class="u-countdown-number u-hidden u-countdown-number-2">0</div></div>
@@ -162,7 +162,32 @@
         };
     };
 </script>
-    
+
+		
+    <script>
+        function updateCountdown() {
+            const endDate = new Date('2024-08-31T00:00:00');
+            const now = new Date();
+            const timeDifference = endDate - now;
+
+            if (timeDifference <= 0) {
+                document.querySelector('.u-countdown2').innerHTML = '<h1>¡El tiempo ha llegado!</h1>';
+                return;
+            }
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = `${days} Días`;
+            document.getElementById('hours').innerText = `${hours} Horas`;
+            document.getElementById('minutes').innerText = `${minutes} Minutos`;
+            document.getElementById('seconds').innerText = `${seconds} Segundos`;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
     
   
 </body></html>
